@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Traceability Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <div class="logo">
+    <img src="GFAT LOGO.jpg" alt="Portal Logo">
+    <span>Grubs & Foods Agro Tech Traceability</span>
+  </div>
+</header>
+
+  <!-- Sidebar -->
+  <aside>
+    <ul>
+      <li><button onclick="showPage('login')"> Login</button></li>
+      <li><button onclick="showPage('dashboard')">Dashboard</button></li>
+      <li><button onclick="showPage('farmers')"> Farmers</button></li>
+      <li><button onclick="showPage('batches')"> Batches</button></li>
+      <li><button onclick="showPage('reports')"> Reports</button></li>
+      <li><button onclick="showPage('integration')"> Integration</button></li>
+      <li><button onclick="showPage('admin')"> Admin</button></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Login Section -->
+    <section id="login">
+      <h1>Login Page</h1>
+      <form onsubmit="event.preventDefault(); showPage('dashboard')">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" placeholder="Enter username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" placeholder="Enter password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" style="display:none;">
+      <h1>Dashboard</h1>
+      <div class="cards">
+        <div class="card"> Farmers: <strong>120</strong></div>
+        <div class="card"> Batches: <strong>35</strong></div>
+        <div class="card"> Compliance: <strong>80%</strong></div>
+        <div class="card"> Exports: <strong>15</strong></div>
+      </div>
+      <div id="chart-area">
+        <h3>Batch Exports Over Time</h3>
+        <p>[Chart Placeholder]</p>
+      </div>
+    </section>
+
+    <!-- Farmers Data -->
+    <section id="farmers" style="display:none;">
+      <h1>Farmers Data</h1>
+      <form>
+        <input type="text" placeholder="Search farmer by name or ID">
+        <button type="button">Search</button>
+      </form>
+
+      <h3>Farmers List</h3>
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>Farmer ID</th>
+          <th>Name</th>
+          <th>Crop</th>
+          <th>Location</th>
+          <th>Contact</th>
+          <th>Certification</th>
+        </tr>
+        <tr>
+          <td>F001</td><td>Ali Musa</td><td>Cocoa</td><td>Osun</td><td>080123456</td><td>Certified</td>
+        </tr>
+        <tr>
+          <td>F002</td><td>Aisha Bello</td><td>Sesame</td><td>Kano</td><td>080987654</td><td>Pending</td>
+        </tr>
+      </table>
+
+      <h3>Add New Farmer</h3>
+      <form>
+        <label>Name:</label><br>
+        <input type="text" required><br>
+        <label>Crop:</label><br>
+        <select>
+          <option>Cocoa</option>
+          <option>Sesame</option>
+          <option>Kolanut</option>
+        </select><br>
+        <label>Location:</label><br>
+        <input type="text"><br>
+        <label>Contact:</label><br>
+        <input type="text"><br>
+        <button type="submit">Add Farmer</button>
+      </form>
+    </section>
+
+    <!-- Batch Tracking -->
+    <section id="batches" style="display:none;">
+      <h1>Batch Tracking</h1>
+      <p>Trace batches from farmer to export.</p>
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>Batch ID</th>
+          <th>Farmer ID</th>
+          <th>Crop</th>
+          <th>Harvest Date</th>
+          <th>Status</th>
+          <th>Destination</th>
+        </tr>
+        <tr>
+          <td>B001</td><td>F001</td><td>Cocoa</td><td>2025-02-10</td><td>Processing</td><td>USA</td>
+        </tr>
+        <tr>
+          <td>B002</td><td>F002</td><td>Sesame</td><td>2025-01-28</td><td>Exported</td><td>UK</td>
+        </tr>
+      </table>
+
+      <h3>Add New Batch</h3>
+      <form>
+        <label>Batch ID:</label><br>
+        <input type="text" required><br>
+        <label>Farmer ID:</label><br>
+        <input type="text" required><br>
+        <label>Crop:</label><br>
+        <select>
+          <option>Cocoa</option>
+          <option>Sesame</option>
+          <option>Kolanut</option>
+        </select><br>
+        <label>Harvest Date:</label><br>
+        <input type="date"><br>
+        <label>Destination:</label><br>
+        <input type="text"><br>
+        <button type="submit">Add Batch</button>
+      </form>
+    </section>
+
+    <!-- Reports -->
+    <section id="reports" style="display:none;">
+      <h1>Compliance & Reports</h1>
+      <h3>Generate Report</h3>
+      <form>
+        <label>Choose Crop:</label>
+        <select>
+          <option>All</option>
+          <option>Cocoa</option>
+          <option>Sesame</option>
+          <option>Kolanut</option>
+        </select>
+        <label>Year:</label>
+        <input type="number" value="2025"><br><br>
+        <button type="submit">Generate</button>
+      </form>
+
+      <h3>Available Reports</h3>
+      <ul>
+        <li>2023 Cocoa Compliance Report <button>Download</button></li>
+        <li>2023 Sesame Audit Pending <button>Upload</button></li>
+      </ul>
+    </section>
+
+    <!-- Integration -->
+    <section id="integration" style="display:none;">
+      <h1>Integration</h1>
+      <p>Connect with external platforms:</p>
+      <ul>
+        <li>Export Platform → <strong>Connected</strong></li>
+        <li>Laboratory Data → <strong>Pending</strong></li>
+      </ul>
+      <button>Reconnect</button>
+    </section>
+
+    <!-- Admin -->
+    <section id="admin" style="display:none;">
+      <h1>Admin Settings</h1>
+      <h3>User Management</h3>
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>U001</td><td>Admin User</td><td>Administrator</td><td>Active</td>
+        </tr>
+        <tr>
+          <td>U002</td><td>Trace Officer</td><td>Data Entry</td><td>Active</td>
+        </tr>
+      </table>
+      <button>Add New User</button>
+
+      <h3>User Profile</h3>
+      <p><strong>Name:</strong> Admin User</p>
+      <p><strong>Email:</strong> admin@portal.com</p>
+      <p><strong>Role:</strong> Administrator</p>
+      <button>Edit Profile</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Traceability Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
