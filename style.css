@@ -1,0 +1,208 @@
+/*Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #222;
+}
+
+/*Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 200px; /* leaves space for sidebar */
+  right: 0;
+  height: 60px;
+  background: black;
+  color: orangered;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* Logo area */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%; /* makes logo round */
+  border: 2px solid #ffa500;
+}
+
+header .logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffa500;
+}
+
+/*Sidebar Navigation */
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: black;
+  color: white;
+  padding-top: 80px; /* leave space for header */
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  margin: 10px 0;
+}
+
+aside ul li button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: none;
+  color: white;
+  text-align: left;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+aside ul li button:hover {
+  background: orangered;
+  color: black;
+  font-weight: bold;
+}
+
+/*Main Content Area */
+main {
+  margin-left: 200px;
+  padding: 80px 20px 60px; /* top padding leaves room for header */
+  width: 100%;
+}
+
+section {
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+section.active {
+  display: block;
+}
+
+/* ========== Tables ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background: orangered;
+  color: black;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/*Forms */
+form {
+  margin-top: 15px;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: orangered;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: black;
+  color: orangered;
+}
+
+/*Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 200px;
+  right: 0;
+  height: 40px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  aside {
+    width: 160px;
+  }
+  header {
+    left: 160px;
+  }
+  footer {
+    left: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  aside {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+  }
+  header, footer {
+    left: 0;
+  }
+  main {
+    margin-left: 0;
+    padding: 70px 10px 60px;
+  }
+}
