@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traceability & Compliance Portal</title>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Portal</h2>
+    <a href="#dashboard" class="active">Dashboard</a>
+    <a href="#traceability">Traceability Data</a>
+    <a href="#compliance">Compliance Activities</a>
+    <a href="#reports">Reports</a>
+    <a href="#integration">Integrations</a>
+    <a href="#settings">Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main" id="main">
+    <!-- Topbar -->
+    <div class="topbar">
+      <button class="toggle-btn" id="toggle-btn">☰</button>
+      <h2>Traceability & Compliance Portal</h2>
+      <input type="search" id="searchInput" placeholder="Search data...">
+    </div>
+
+    <!-- Dashboard -->
+    <div class="content" id="dashboard">
+      <h1>Dashboard</h1>
+      <div class="cards">
+        <div class="card">
+          <h3>Traceability Records</h3>
+          <p>1,245 Active</p>
+        </div>
+        <div class="card">
+          <h3>Compliance Checks</h3>
+          <p>320 Completed</p>
+        </div>
+        <div class="card"><!-- <!--  --> -->
+          <h3>Reports Generated</h3>
+          <p>87 This Month</p>
+        </div>
+        <div class="card">
+          <h3>System Integrations</h3>
+          <p>5 Active</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Traceability -->
+    <div class="content" id="traceability">
+      <h1>Traceability Data</h1>
+      <p>Manage product traceability across the supply chain here.</p>
+      <table id="traceTable">
+        <thead>
+          <tr>
+            <th>Batch ID</th>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BATCH-001</td>
+            <td>CassiaTora Seed</td>
+            <td>Processed</td>
+            <td>2025-08-15</td>
+          </tr>
+          <tr>
+            <td>BATCH-002</td>
+            <td>Sesame Seed</td>
+            <td>Pending </td>
+            <td>2025-08-17</td>
+          </tr>
+          <tr>
+            <td>BATCH-003</td>
+            <td>Hibiscus Flower</td>
+            <td>Processed</td>
+            <td>2025-08-18</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compliance -->
+    <div class="content" id="compliance">
+      <h1>Compliance Activities</h1>
+      <button class="collapsible">View Compliance Activities</button>
+      <div class="content-box">
+        <ul>
+          <li>ISO 22000 Audit - Pending</li>
+          <li>Export Certification - Completed</li>
+          <li>Lab Test Validation - In Progress</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="content" id="reports">
+      <h1>Reports</h1>
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>Report ID</th>
+            <th>Title</th>
+            <th>Generated On</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>REP-001</td>
+            <td>Monthly Compliance Overview</td>
+            <td>2025-08-01</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>REP-002</td>
+            <td>Traceability Batch Summary</td>
+            <td>2025-08-10</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>REP-003</td>
+            <td>Integration Report</td>
+            <td>2025-08-15</td>
+            <td>In Progress</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Integrations -->
+    <div class="content" id="integration">
+      <h1>Integrations</h1>
+      <div class="cards">
+        <div class="card">
+          <h3>Export Platform</h3>
+          <p>Status: Connected</p>
+        </div>
+        <div class="card">
+          <h3>Laboratory Data Services</h3>
+          <p>Status: Active</p>
+        </div>
+        <div class="card">
+          <h3>ERP System</h3>
+          <p>Status: Pending Setup</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
